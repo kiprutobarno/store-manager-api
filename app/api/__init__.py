@@ -4,6 +4,7 @@ from flask_restful import Api
 
 from v1.products import ShowAllProducts, ShowSingleProduct, AddProduct, UpdateProduct, DeleteProduct
 from v1.sales import ShowAllSales, ShowSingleSale, AddSale
+from v1.users import User
 
 # create blueprint
 v1_blueprint = Blueprint('api_v1', __name__, url_prefix="/api/v1")
