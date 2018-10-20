@@ -19,6 +19,7 @@ products = [
 ]
 
 
+# admin and an attendant
 class ShowAllProducts(Resource):
     @jwt_required()
     def get(self):
