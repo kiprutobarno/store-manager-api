@@ -25,7 +25,7 @@ class ShowAllProducts(Resource):
         return products
 
 
-# both store attendant and admin
+# store attendant and admin
 class ShowSingleProduct(Resource):
     @jwt_required()
     def get(self, product_id):
