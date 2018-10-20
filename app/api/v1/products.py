@@ -1,3 +1,4 @@
+from flask import jsonify, abort
 from flask_restful import Resource
 from flask_jwt import jwt_required
 
@@ -27,7 +28,16 @@ class ShowAllProducts(Resource):
 class ShowSingleProduct(Resource):
     @jwt_required()
     def get(self, product_id):
-        pass
+        product = [product for product in products if product['product_id'] == product_id]
+        if len(product) == 0:
+            abort(404)
+        return jsonify(
+            {
+                "Response": "success",
+                "Status": "OK",
+                'product': product[0]
+            }
+        )
 
 
 class AddProduct(Resource):
