@@ -41,4 +41,24 @@ class ShowSingleSale(Resource):
 class AddSale(Resource):
     @jwt_required()
     def post(self):
-        return '', 204
+        def post(self):
+            data = request.get_json()
+            sale = {
+
+                'transaction_id': len(sales) + 1,
+                'item': [
+                    {
+                        'product_id': data['item'][0]['product_id'],
+                        'quantity': data['item'][0]['quantity'],
+                        'unit_price': data['item'][0]['unit_price'],
+                        'cost': data['item'][0]['cost']
+                    }
+                ],
+                'total_cost': data['total_cost']
+            }
+            sales.append(sale)
+            return {
+                "Response": "Success",
+                "Status": "Created",
+                "sale": sale
+            }
