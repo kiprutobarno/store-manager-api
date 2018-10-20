@@ -42,6 +42,7 @@ class ShowSingleProduct(Resource):
         )
 
 
+# an admin and an attendant
 class AddProduct(Resource):
     @jwt_required()
     def post(self):
