@@ -21,14 +21,14 @@ products = [
 
 # admin and an attendant should be able to retrieve all products
 class ShowAllProducts(Resource):
-    # @jwt_required()
+    @jwt_required()
     def get(self):
         return products
 
 
 # store attendant and admin
 class ShowSingleProduct(Resource):
-    # @jwt_required()
+    @jwt_required()
     def get(self, product_id):
         product = [product for product in products if product['product_id'] == product_id]
         if len(product) == 0:
@@ -44,7 +44,7 @@ class ShowSingleProduct(Resource):
 
 # an admin and an attendant
 class AddProduct(Resource):
-    # @jwt_required()
+    @jwt_required()
     def post(self):
         product = {
             'product_id': products[-1]['product_id'] + 1,
@@ -61,7 +61,7 @@ class AddProduct(Resource):
 
 
 class UpdateProduct(Resource):
-    # @jwt_required()
+    @jwt_required()
     def put(self, product_id):
         product = [product for product in products if (product['product_id'] == product_id)]
         if len(product) == 0:
@@ -94,7 +94,7 @@ class UpdateProduct(Resource):
 
 
 class DeleteProduct(Resource):
-    # @jwt_required()
+    @jwt_required()
     def delete(self, product_id):
         product = [product for product in products if (product['product_id'] == product_id)]
         if len(product) == 0:
