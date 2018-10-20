@@ -19,7 +19,7 @@ products = [
 ]
 
 
-# admin and an attendant
+# admin and an attendant should be able to retrieve all products
 class ShowAllProducts(Resource):
     @jwt_required()
     def get(self):
