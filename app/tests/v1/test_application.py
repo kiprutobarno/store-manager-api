@@ -1,5 +1,5 @@
 import unittest
-from flask import json
+from flask import json, current_app
 from app import create_app
 
 
@@ -12,6 +12,12 @@ class TestClient(unittest.TestCase):
 
     def teardown(self):
         self.app_context.pop()
+
+    def test_app_exists(self):
+        self.assertFalse(current_app is None)
+
+    def test_app_is_testing(self):
+        self.assertTrue(current_app.config['TESTING'])
 
     def test_all_products_endpoint(self):
         response = self.client.get('api/v1/products')

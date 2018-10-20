@@ -16,12 +16,25 @@ sales = [
         ],
 
         'total_cost': 150
+    },
+{
+        'transaction_id': 2,
+        'item': [
+            {
+                'product_id': 3,
+                'quantity': 5,
+                'unit_price': 400,
+                'cost': 200
+            }
+        ],
+
+        'total_cost': 200
     }
 ]
 
 
 class ShowAllSales(Resource):
-    @jwt_required()
+    # @jwt_required()
     def get(self):
         return jsonify(
             {
@@ -33,32 +46,39 @@ class ShowAllSales(Resource):
 
 
 class ShowSingleSale(Resource):
-    @jwt_required()
+    # @jwt_required()
     def get(self, transaction_id):
-        return '', 204
+        sale = [sale for sale in sales if sale['transaction_id'] == transaction_id]
+        if len(sale) == 0:
+            abort(404)
+        return jsonify(
+            {
+                "Response": "success",
+                "Status": "OK",
+                'sale': sale[0]
+            }
+        )
 
 
 class AddSale(Resource):
-    @jwt_required()
+    # @jwt_required()
     def post(self):
-        def post(self):
-            data = request.get_json()
-            sale = {
-
-                'transaction_id': len(sales) + 1,
-                'item': [
-                    {
-                        'product_id': data['item'][0]['product_id'],
-                        'quantity': data['item'][0]['quantity'],
-                        'unit_price': data['item'][0]['unit_price'],
-                        'cost': data['item'][0]['cost']
-                    }
-                ],
-                'total_cost': data['total_cost']
-            }
-            sales.append(sale)
-            return {
-                "Response": "Success",
-                "Status": "Created",
-                "sale": sale
-            }
+        data = request.get_json()
+        sale = {
+            'transaction_id': len(sales) + 1,
+            'item': [
+                {
+                    'product_id': data['item'][0]['product_id'],
+                    'quantity': data['item'][0]['quantity'],
+                    'unit_price': data['item'][0]['unit_price'],
+                    'cost': data['item'][0]['cost']
+                }
+            ],
+            'total_cost': data['total_cost']
+        }
+        sales.append(sale)
+        return {
+            "Response": "Success",
+            "Status": "Created",
+            "sale": sale
+        }
