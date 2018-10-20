@@ -2,16 +2,32 @@ from flask_restful import Resource
 from flask_jwt import jwt_required
 
 
+products = [
+    {
+        'product_id': 1,
+        'name': 'banana',
+        'category': 'fruit',
+        'price': 35
+    },
+    {
+        'product_id': 2,
+        'name': 'carrots',
+        'category': 'vegetable',
+        'price': 30
+    }
+]
+
+
 class ShowAllProducts(Resource):
     @jwt_required()
     def get(self):
-        return '', 204
+        return products
 
 
 class ShowSingleProduct(Resource):
     @jwt_required()
     def get(self, product_id):
-        return '', 204
+        pass
 
 
 class AddProduct(Resource):
