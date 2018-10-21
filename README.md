@@ -40,5 +40,5 @@ Using the Authentication Tokens
  3. View Products: GET https://floating-hollows-10589.herokuapp.com/api/v1/products
  4. Viewing a specific product GET https://floating-hollows-10589.herokuapp.com/api/v1/products/<product_id>
  5. Update Products: POST https://floating-hollows-10589.herokuapp.com/update/api/v1/products/<product_id>
- 4. Add Products: POST https://floating-hollows-10589.herokuapp.com/api/v1/products/
- 6: Add Sales: POST https://floating-hollows-10589.herokuapp.com/api/v1/sales
+ 6. Add Products: POST https://floating-hollows-10589.herokuapp.com/api/v1/products/
+ 7: Add Sales: POST https://floating-hollows-10589.herokuapp.com/api/v1/sales
