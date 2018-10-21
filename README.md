@@ -11,7 +11,7 @@ TravisCI Test
 Coverall Test
 
 
-[![Coverage Status](https://coveralls.io/repos/github/kipruto/store-manager-api/badge.svg)](https://coveralls.io/github/kipruto/store-manager-api)
+[![Coverage Status](https://coveralls.io/repos/github/kipruto/store-manager-api/badge.svg?branch=bg-fix-coveralls-badge-161365045)](https://coveralls.io/github/kipruto/store-manager-api?branch=bg-fix-coveralls-badge-161365045)
 
 
 USING STORE MANAGER API
