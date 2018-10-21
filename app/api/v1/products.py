@@ -64,16 +64,6 @@ class UpdateProduct(Resource):
     # @jwt_required()
     def put(self, product_id):
         product = [product for product in products if (product['product_id'] == product_id)]
-        if len(product) == 0:
-            abort(404)
-        if not request.json:
-            abort(404)
-        if 'name' in request.json and type(request.json['name']) != unicode:
-            abort(404)
-        if 'category' in request.json and type(request.json['category']) != unicode:
-            abort(404)
-        if 'price' in request.json and type(request.json['category']) != unicode:
-            abort(404)
 
         if 'name' in request.json:
             product[0]['name'] = request.json['name']
@@ -97,8 +87,6 @@ class DeleteProduct(Resource):
     # @jwt_required()
     def delete(self, product_id):
         product = [product for product in products if (product['product_id'] == product_id)]
-        if len(product) == 0:
-            abort(404)
         products.remove(product[0])
         return jsonify(
             {

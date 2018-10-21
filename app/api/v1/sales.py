@@ -49,8 +49,6 @@ class ShowSingleSale(Resource):
     # @jwt_required()
     def get(self, transaction_id):
         sale = [sale for sale in sales if sale['transaction_id'] == transaction_id]
-        if len(sale) == 0:
-            abort(404)
         return jsonify(
             {
                 "Response": "success",
