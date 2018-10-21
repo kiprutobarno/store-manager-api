@@ -35,10 +35,10 @@ Using the Authentication Tokens
  Consuming the API
  =================
  
- 1. View Sales: GET https://floating-hollows-10589.herokuapp.com/api/v1/sales
+ 1. View all sales: GET https://floating-hollows-10589.herokuapp.com/api/v1/sales
  2. View a specific sale order GET https://floating-hollows-10589.herokuapp.com/api/v1/sales/<transaction_id>
- 3. View Products: GET https://floating-hollows-10589.herokuapp.com/api/v1/products
+ 3. View all products: GET https://floating-hollows-10589.herokuapp.com/api/v1/products
  4. Viewing a specific product GET https://floating-hollows-10589.herokuapp.com/api/v1/products/<product_id>
- 5. Update Products: POST https://floating-hollows-10589.herokuapp.com/update/api/v1/products/<product_id>
- 6. Add Products: POST https://floating-hollows-10589.herokuapp.com/api/v1/products/
- 7: Add Sales: POST https://floating-hollows-10589.herokuapp.com/api/v1/sales
+ 5. Update a specific products: POST https://floating-hollows-10589.herokuapp.com/update/api/v1/products/<product_id>
+ 6. Add a products: POST https://floating-hollows-10589.herokuapp.com/api/v1/products
+ 7: Add a sale: POST https://floating-hollows-10589.herokuapp.com/api/v1/sales
