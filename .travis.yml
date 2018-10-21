@@ -9,7 +9,8 @@ install:
 
 #test coverage should appear in coverall
 script:
-  - pytest app/tests/v1/test_application.py  --cov-report term-missing --cov-app
+  - pytest app/tests/v1/test_application.py
+  - pytest --cov-report term-missing --cov-app
   - coveralls
 
 after_success:
