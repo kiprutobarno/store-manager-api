@@ -31,8 +31,6 @@ class ShowSingleProduct(Resource):
     # @jwt_required()
     def get(self, product_id):
         product = [product for product in products if product['product_id'] == product_id]
-        if len(product) == 0:
-            abort(404)
         return jsonify(
             {
                 "Response": "success",
