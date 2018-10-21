@@ -10,7 +10,6 @@ TravisCI Test
 
 Coverall Test
 
-
 [![Coverage Status](https://coveralls.io/repos/github/kipruto/store-manager-api/badge.svg?branch=bg-fix-coveralls-badge-161365045)](https://coveralls.io/github/kipruto/store-manager-api?branch=bg-fix-coveralls-badge-161365045)
 
 
@@ -24,7 +23,7 @@ USING STORE MANAGER API
 a). Postman
 b). An internet connection
 
-OBTAINING AUTHENTICATION TOKENS
+GENERATING AUTHENTICATION TOKENS
 =================================
 1. Using postman POST, enter the URL https://floating-hollows-10589.herokuapp.com/auth and press send, the Authentication token wil pop up in the form below. Copy it without the opening and closing quotes
 
