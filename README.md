@@ -30,7 +30,7 @@ OBTAINING AUTHENTICATION TOKENS
 
 USING THE AUTHENTICATION TOKENS
 ==================================
-1. After choosing your request method and inputting your API URL, in postman Headers section of postman's input, choose KEY as Authorization and VALUE as JWT <paste your previously copied token>
+1. After choosing your request method and inputting your API URL, in postman Headers section of postman's input, choose KEY as Authorization and VALUE starting with JWT followed by your previously copied token(e.g JWT r4Tf6dGlkh4bgWdhgU1pH.....)
 2. Press enter
   
  CONSUMING THE API
