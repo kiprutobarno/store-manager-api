@@ -25,7 +25,18 @@ Requirements
 
 Generating Authentication Tokens
 =================================
-1. Using postman POST, enter the URL https://floating-hollows-10589.herokuapp.com/auth and press send, the Authentication token wil pop up in the form below. Copy it without the opening and closing quotes
+1. Using postman POST, enter the URL https://floating-hollows-10589.herokuapp.com/auth 
+2. In the tabs, choose Headers and input Content-Type as KEY and application/json as VALUE. Go to Body tab, click "raw" radio button and choose JSON(application/json) in the drop-down button. Enter your username and password as 
+{
+	"username":"user",
+	"password":"user123"
+}
+or
+{
+	"username":"admin",
+	"password":"admin123"
+}
+Press the blue Send button and the Authentication token wil pop up in the form below. Copy it without the opening and closing quotes
 
 Using the Authentication Tokens
 ==================================
