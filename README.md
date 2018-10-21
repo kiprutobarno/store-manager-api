@@ -17,22 +17,22 @@ USING STORE MANAGER API
 ================================
 
 
-1. Requirements
+Requirements
 ===============================
 
 a). Postman
 b). An internet connection
 
-GENERATING AUTHENTICATION TOKENS
+Generating Authentication Tokens
 =================================
 1. Using postman POST, enter the URL https://floating-hollows-10589.herokuapp.com/auth and press send, the Authentication token wil pop up in the form below. Copy it without the opening and closing quotes
 
-USING THE AUTHENTICATION TOKENS
+Using the Authentication Tokens
 ==================================
 1. After choosing your request method and inputting your API URL, in postman Headers section of postman's input, choose KEY as Authorization and VALUE starting with JWT followed by your previously copied token(e.g JWT r4Tf6dGlkh4bgWdhgU1pH.....)
 2. Press enter
   
- CONSUMING THE API
+ Consuming the API
  =================
  
  1. View Sales: GET https://floating-hollows-10589.herokuapp.com/api/v1/sales
