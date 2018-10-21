@@ -6,7 +6,7 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install coveralls
-  - pip install code-climate-test-reporter
+  - pip install codeclimate-test-reporter
 # command to run tests
 
 #test coverage should appear in coverall
@@ -16,4 +16,4 @@ script:
 
 after_success:
   - coveralls
-  - code-climate-test-reporter
+  - codeclimate-test-reporter
