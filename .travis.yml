@@ -5,14 +5,12 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install coveralls
   - pip install codeclimate-test-reporter
 # command to run tests
 
 #test coverage should appear in coverall
 script:
-  - pytest app/tests/v1/test_application.py
-  - coveralls
+  - pytest --cov-report term-missing --cov=app/tests/v1/test_application.py
 
 after_success:
   - coveralls
