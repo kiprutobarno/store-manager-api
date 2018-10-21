@@ -10,7 +10,7 @@ TravisCI Test
 
 Coverall Test
 
-[![Coverage Status](https://coveralls.io/repos/github/kipruto/store-manager-api/badge.svg?branch=bg-fix-coveralls-badge-161365045)](https://coveralls.io/github/kipruto/store-manager-api?branch=bg-fix-coveralls-badge-161365045)
+[![Coverage Status](https://coveralls.io/repos/github/kipruto/store-manager-api/badge.svg?branch=master)](https://coveralls.io/github/kipruto/store-manager-api?branch=master)
 
 
 USING STORE MANAGER API
@@ -20,8 +20,8 @@ USING STORE MANAGER API
 Requirements
 ===============================
 
-a). Postman
-b). An internet connection
+1. Postman
+2. An internet connection
 
 Generating Authentication Tokens
 =================================
