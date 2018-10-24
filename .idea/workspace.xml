@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9a46189-2085-408b-9327-4f6d5a675505" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/tests/v1/test_application.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/v1/test_application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Instance/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/Instance/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +17,8 @@
     <session id="359127865">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="3" />
           <entry key="project.open.time.16" value="2" />
@@ -27,7 +30,7 @@
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -35,7 +38,7 @@
           <entry key="Procfile" value="1" />
           <entry key="coverage" value="2" />
           <entry key="gitignore" value="1" />
-          <entry key="py" value="129" />
+          <entry key="py" value="132" />
           <entry key="txt" value="4" />
           <entry key="yml" value="2" />
         </counts>
@@ -44,13 +47,13 @@
         <counts>
           <entry key="Git file" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="129" />
+          <entry key="Python" value="132" />
           <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="7305" />
+          <entry key="py" value="7319" />
           <entry key="txt" value="19" />
           <entry key="yml" value="406" />
         </counts>
@@ -58,7 +61,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="19" />
-          <entry key="Python" value="7305" />
+          <entry key="Python" value="7319" />
           <entry key="YAML" value="406" />
         </counts>
       </usages-collector>
@@ -72,34 +75,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/__init__.py">
+        <entry file="file://$PROJECT_DIR$/Instance/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="84">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/api/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="13" lean-forward="true" selection-end-line="25" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/tests/v1/test_application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="234">
+              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -107,27 +95,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Instance/config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/api/v1/models/products.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -149,14 +120,14 @@
         <option value="$PROJECT_DIR$/app/api/v1/models/sales.py" />
         <option value="$PROJECT_DIR$/app/api/v1/users.py" />
         <option value="$PROJECT_DIR$/app/api/v1/views/landing.py" />
-        <option value="$PROJECT_DIR$/app/api/__init__.py" />
         <option value="$PROJECT_DIR$/app/api/v1/utils.py" />
         <option value="$PROJECT_DIR$/app/api/v1/models/users.py" />
-        <option value="$PROJECT_DIR$/Instance/config.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/api/v1/views/users.py" />
         <option value="$PROJECT_DIR$/app/api/v1/views/sales.py" />
         <option value="$PROJECT_DIR$/app/api/v1/views/products.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/api/__init__.py" />
+        <option value="$PROJECT_DIR$/Instance/config.py" />
         <option value="$PROJECT_DIR$/app/tests/v1/test_application.py" />
       </list>
     </option>
@@ -164,7 +135,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="112" />
     <option name="y" value="52" />
-    <option name="width" value="1199" />
+    <option name="width" value="1189" />
     <option name="height" value="388" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -175,6 +146,35 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="v1" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,38 +238,169 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="store-manager-api" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Instance" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ignore_missing_gitignore" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Instance/config.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/tests/v1/test_application.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/requirements.txt</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.travis.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Instance/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Procfile</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/v1/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/v1/products.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/v1/sales.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/v1/users.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/api/v2/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/run.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/tests/__init__.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/run.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/runtime.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/activate</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/activate.csh</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/activate.fish</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/activate_this.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/chardetect</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/coverage</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/coverage-2.7</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/coverage2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/coveralls</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/easy_install</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/easy_install-2.7</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/flask</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/gunicorn</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/gunicorn_paster</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/jwt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/pip</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/pip2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/pip2.7</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/py.test</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/pytest</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/python</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/python-config</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/python2</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/python2.7</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/bin/wheel</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/include/python2.7</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/local/bin</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/local/include</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/local/lib</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/venv/pip-selfcheck.json</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -325,7 +456,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16915052" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -382,8 +512,6 @@
     <entry file="file://$PROJECT_DIR$/Procfile" />
     <entry file="file://$PROJECT_DIR$/app/api/v1/__init__.py" />
     <entry file="file://$PROJECT_DIR$/app/run.py" />
-    <entry file="file://$PROJECT_DIR$/app/api/v1/models/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/app/api/v1/views/__init__.py" />
     <entry file="file://$PROJECT_DIR$/app/api/v1/products.py" />
     <entry file="file://$PROJECT_DIR$/app/api/v1/users.py" />
     <entry file="file://$PROJECT_DIR$/app/api/v1/utils.py">
@@ -436,6 +564,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/v1/views/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/v1/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/v1/models/products.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -443,27 +577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/tests/v1/test_application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Instance/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="44" />
+        <state relative-caret-position="374">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -472,10 +589,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" lean-forward="true" selection-end-line="25" />
+        <state relative-caret-position="84">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Instance/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/tests/v1/test_application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

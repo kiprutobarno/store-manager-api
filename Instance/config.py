@@ -1,6 +1,10 @@
 # configurations class
+import os
+
+
 class Config(object):
     DEBUG = False
+    SECRET_KEY = os.getenv('SECRET_KEY', 'sweet-secret')
 
 
 # development environment configurations
