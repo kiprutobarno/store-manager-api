@@ -1,7 +1,7 @@
 from flask import jsonify, request, make_response
 from flask_restful import Resource
 from flask_jwt_extended import jwt_required
-
+# import sale class
 from app.api.v1.models.sales import Sale
 
 
