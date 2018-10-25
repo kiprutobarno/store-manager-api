@@ -9,6 +9,7 @@ from flask_jwt_extended import (create_access_token, create_refresh_token,
 parser = reqparse.RequestParser()
 parser.add_argument('username', required=True, help='Username cannot be blank', type=str)
 parser.add_argument('password', required=True, help='Password cannot be blank', type=str)
+parser.add_argument('role', required=True, help='Role be blank', type=str)
 
 
 class Registration(Resource):
@@ -18,7 +19,9 @@ class Registration(Resource):
     def post(self):
         data = parser.parse_args()
         username = data['username']
+        role = data['role']
         password = data['password']
+
         validate_user_data = Validate(username, password)
         validate_user_data.validate_user_details()
         user = User(username=data['username'], password=User.generate_hash(data['password']))
