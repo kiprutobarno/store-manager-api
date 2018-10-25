@@ -1,5 +1,8 @@
-# configurations class
+import os
+
+
 class Config(object):
+    SECRET_KEY = os.getenv('SECRET_KEY')
     DEBUG = False
 
 
