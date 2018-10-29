@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
-from instance.config import app_config
+from Instance.config import app_config
 
 
 def create_app(config_name):
