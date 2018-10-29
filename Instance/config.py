@@ -1,31 +1,30 @@
-# configurations class
 class Config(object):
+    """Parent configuration class."""
     DEBUG = False
 
 
-# development environment configurations
 class DevelopmentConfig(Config):
+    """Configurations for Development."""
     DEBUG = True
 
 
-# testing environment configurations
 class TestingConfig(Config):
+    """Configurations for Testing"""
     TESTING = True
     DEBUG = True
 
 
-# staging environment configurations
 class StagingConfig(Config):
+    """Configurations for Staging."""
     DEBUG = True
 
 
-# production environment configurations
 class ProductionConfig(Config):
+    """Configurations for Production."""
     DEBUG = False
     TESTING = False
 
 
-# configurations dictionary
 app_config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
