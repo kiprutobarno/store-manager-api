@@ -1,102 +1,71 @@
-from flask import jsonify, make_response, request
-from flask_restful import Resource
-from .users import token_required
+from flask_restful import Resource, reqparse
+from flask import make_response, jsonify
+from ..models.sale import *
 from ..utils import *
-from ..models.sales import *
+from ..models.user import jwt_required
+
+parser = reqparse.RequestParser()
+parser.add_argument('product_name', required=True, type=str, help='How about Product Name?')
+parser.add_argument('quantity', required=True, type=int, help='How about Quantity?')
+parser.add_argument('unit_price', required=True, type=float, help='How about Price?')
+parser.add_argument('category', required=True, type=str, help='How about Category?')
 
 
-class Sale(Resource):
-    @token_required
-    def get(self, current_user):
-        if current_user['role'] == "admin":
-            if len(sales) > 0:
-                response = make_response(jsonify({
+class Sales(Resource):
+    @staticmethod
+    @jwt_required
+    def get():
+        """Fetches all sales"""
+        if len(Sale.sales) >= 1:
+            return make_response(jsonify(
+                {
                     'status': 'OK',
-                    'message': "Success",
-                    'Sale': sales
-                }), 200)
-            else:
-                response = make_response(jsonify({
-                    'status': 'Failure',
-                    'message': "No sale transaction found!"
-                }), 404)
-            return response
+                    'products': Sale.get_all_sales()
+                }
+            ), 200)
+        else:
+            return make_response(jsonify(
+                {
+                    'message': 'No product found!'
+                }
+            ), 200)
+
+    @staticmethod
+    @jwt_required
+    def post():
+        """Make a sale"""
+        data = parser.parse_args()
+        product_name = data['product_name']
+        quantity = data['quantity']
+        category = data['category']
+        unit_price = data['unit_price']
+        product_data = ProductValidation(product_name, quantity, category, unit_price)
+        product_data.validate_product_data()
+        new_sale = Sale(product_name=product_name,
+                        quantity=quantity,
+                        unit_price=unit_price,
+                        category=category
+                        )
+
+        new_sale.make_sale()
 
         return make_response(jsonify({
-            'status': 'Failure',
-            'message': "You do not have admin rights!"
-        }), 403)
+            'status': 'success',
+            'product_name': product_name,
+            'quantity': quantity,
+            'category': category,
+            'unit_price': unit_price
 
-    # Make a sales
-    @token_required
-    def post(self, current_user):
-        total = 0
-        data = request.get_json()
-        if not data:
-            return make_response(jsonify({
-                                         'status': 'Failure',
-                                         'message': "No data!"
-                                         }), 400)
-        product_id = data['product_id']
-        if current_user['role'] == 'attendant':
-            for product in products:
-                if product['quantity'] > 0:
-                    if product['product_id'] == product_id:
-                        attendant_id = current_user['user_id']
-                        sale = {
-                            'sale_id': len(sales) + 1,
-                            'attendant_id': attendant_id,
-                            'product': product
-                        }
-                        post_sale = Sale(sale)
-                        post_sale.create_sale()
-                        product['quantity'] = product['quantity'] - 1
-                        for sale in sales:
-                            if product['product_id'] in sale.values():
-                                total = total + int(product['unit_price'])
-                        return make_response(jsonify({
-                            'status': 'OK',
-                            'message': "Success",
-                            'sales': sales,
-                            "total": total
-                        }), 201)
-                    else:
-                        return make_response(jsonify({
-                            'Status': 'Failed',
-                            'Message': "product does not exist"
-                        }), 404)
-                else:
-                    return make_response(jsonify({
-                                         'status': 'Failure',
-                                         'message': "We've run out of stock!"
-                                         }), 404)
+        }), 201)
+
+
+class GetSpecificSale(Resource):
+
+    @staticmethod
+    @jwt_required
+    def get(transaction_id):
+        sale = Sale.get_specific_sale(transaction_id)
+        if sale:
+            return make_response(jsonify({'sale': sale}), 200)
         else:
-            return make_response(jsonify({
-                                         'status': 'Failure',
-                                         'Message': "You are not an attendant"
-                                         }), 403)
-
-
-class SpecificSale(Resource):
-    @token_required
-    def get(self, current_user, sale_id):
-        for sale in sales:
-            if current_user['user_id'] == sale['attendant_id'] or current_user['role'] == 'admin':
-                if int(sale_id) == sale['sale_id']:
-                    response = make_response(jsonify({
-                        'status': 'OK',
-                        'message': "success",
-                        'sale': sale
-                    }), 200)
-
-                else:
-                    response = make_response(jsonify({
-                        'status': 'Failure',
-                        'message': "No sale transactions!"
-                    }), 404)
-                return response
-            else:
-                return make_response(jsonify({
-                    'status': 'Failure',
-                    'message': "You are not authorized to access this data"
-                }), 401)
+            return make_response(jsonify("Sale transaction not found"), 404)

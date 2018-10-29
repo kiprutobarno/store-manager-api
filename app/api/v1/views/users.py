@@ -1,82 +1,51 @@
-import datetime
-from functools import wraps
-from flask import jsonify, make_response, request
-from flask_restful import Resource
-from Instance.config import app_config
-from werkzeug.security import check_password_hash
-import jwt
-from ..utils import *
-from ..models.users import *
+from flask_restful import Resource, reqparse
+from flask import make_response, jsonify
+from app.api.v1.utils import *
+from ..models.user import *
+from flask_jwt_extended import (create_access_token)
+
+parser = reqparse.RequestParser()
+parser.add_argument('email', required=True, type=str, help='Email cannot be blank')
+parser.add_argument('password', required=True, type=str)
+parser.add_argument('role', type=str)
 
 
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        token = None
-        current_user = None
-        if 'x-access-token' in request.headers:
-            token = request.headers['x-access-token']
-        if not token:
-            return make_response(jsonify({
-                'Message': 'Token is missing, You must login first'
-            }), 401)
-        try:
-            data = jwt.decode(token, app_config['development'].SECRET_KEY)
-            for user in users:
-                if user['username'] == data['username']:
-                    current_user = user
-        except:
-            return make_response(jsonify({'Message': 'Token is invalid'}),
-                                 403)
-        return f(current_user, *args, **kwargs)
-    return decorated
+class SignUp(Resource):
+    """Creates a user and returns a confirmation message"""
+    def __init__(self):
+        self.users = User.users
 
-
-class Registration(Resource):
-    def post(self):
-        data = request.get_json()
-        if not data:
-            return make_response(jsonify({
-                'Status': 'Fail',
-                'Message': "You did not submit any data"
-            }), 400)
-
-        validate = UserValidation(data)
-        validate.validate_user_details()
-        user = User(data)
-        user.create_user()
-        for user in users:
-            username = user['username']
-            role = user['role']
-            return make_response(jsonify({
-                'Status': 'Success',
-                'Message': "User '" + username + "' successfully registered as '" + role,
-            }), 201)
+    @staticmethod
+    def post():
+        data = parser.parse_args()
+        email = data['email']
+        password = data['password']
+        role = data['role']
+        user_data = RegistrationValidation(email, password, role)
+        user_data.validate_user_data()
+        new_user = User(email=email, password=User.generate_hash(password), role=role)
+        new_user.create_user()
+        return make_response(jsonify({
+            'status': 'success',
+            'message': 'User {} was created'.format(email)
+        }), 201)
 
 
 class Login(Resource):
-    def post(self):
-        data = request.get_json()
-        username = data['username']
+    """logs in registered users and returns a token and confirmation message"""
+    def __init__(self):
+        self.users = User.users
+
+    @staticmethod
+    def post():
+        data = parser.parse_args()
+        email = data['email']
         password = data['password']
-        if not data or not username or not password:
-            return make_response(jsonify({
-                                         'Status': 'Failure',
-                                         'Message': "You must log in first"
-                                         }), 400)
+        login_data = LoginValidation(email, password)
+        login_data.validate_login_data()
 
-        for user in users:
-            if user['username'] == username and check_password_hash(user["password"],
-                                                                    password):
-                token = jwt.encode({'username': user['username'],
-                                    'exp': datetime.datetime.utcnow() +
-                                    datetime.timedelta(minutes=20)},
-                                   app_config['development'].SECRET_KEY)
-                return make_response(jsonify({
-                                             'token': token.decode('UTF-8')
-                                             }), 200)
-
-        return make_response(jsonify({
-            'Status': 'Failure',
-            'Message': "Invalid login credentials"
-        }), 404)
+        for user in User.users:
+            if email == user["email"] and User.verify_hash(password, user['password']):
+                access_token = create_access_token(identity=email)
+                return jsonify(token=access_token, message="Login successful!")
+        return jsonify(message="User does not exist!")

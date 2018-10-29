@@ -1,16 +1,18 @@
 from flask import Blueprint
 from flask_restful import Api
-from .v1.views.products import Product, SpecificProduct
-from .v1.views.sales import Sale, SpecificSale
-from .v1.views.users import Registration, Login
-v1_blueprint = Blueprint('api', __name__, url_prefix='/api/v1')
 
-api = Api(v1_blueprint)
+from v1.views.users import SignUp, Login
+from v1.views.products import Products, GetSpecificProduct
+from v1.views.sales import Sales, GetSpecificSale
 
-api.add_resource(Product, '/products')
-api.add_resource(SpecificProduct, '/products/<productID>')
-api.add_resource(Sale, '/sales')
-api.add_resource(SpecificSale, '/sales/<saleID>')
-api.add_resource(Registration, '/auth/signup')
-api.add_resource(Login, '/auth/login')
 
+# create blueprint
+v1_blueprint = Blueprint('api_v1', __name__, url_prefix="/api/v1")
+api_v1 = Api(v1_blueprint)
+
+api_v1.add_resource(SignUp, '/signup')
+api_v1.add_resource(Login, '/login')
+api_v1.add_resource(Products, '/products')
+api_v1.add_resource(GetSpecificProduct, '/products/<int:product_id>')
+api_v1.add_resource(Sales, '/sales')
+api_v1.add_resource(GetSpecificSale, '/sales/<int:transaction_id>')

@@ -1,78 +1,104 @@
 from flask import abort
+import re
+from .models.user import User
+from .models.product import *
 
-from .models.users import *
-from .models.products import *
 
+class RegistrationValidation:
+    def __init__(self, email, password, role):
+        self.email = email
+        self.password = password
+        self.role = role
 
-class UserValidation:
-    def __init__(self, data):
-        self.username = data['username']
-        self.password = data['password']
-        self.role = data['role']
-
-    def validate_user_details(self):
-        if self.username == "":
-            warning = "please provide your username"
-            abort(400, warning)
+    def validate_user_data(self):
+        """REGEX to verify email address format"""
+        if re.match(r'^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', self.email) is None:
+            message = "Invalid email address"
+            abort(400, message)
+        for user in User.users:
+            if self.email == user["email"]:
+                message = "This email is already registered"
+                abort(400, message)
+        if self.email == "":
+            message = "Your must provide an email address"
+            abort(400, message)
         if self.password == "":
-            warning = "please enter your password"
-            abort(400, warning)
+            message = "You must provide a password"
+            abort(400, message)
         if self.role == "":
-            warning = "Please assign user role"
-            abort(400, warning)
-        for user in users:
-            if self.username == user["username"]:
-                warning = "Username already taken"
-                abort(406, warning)
+            message = "Role cannot be empty"
+            abort(400, message)
+        if type(self.email) != str:
+            message = "Email address must be a string"
+            abort(400, message)
+        if self.role not in User.roles:
+            message = "Role must either be admin or attendant"
+            abort(400, message)
+        if type(self.role) != str:
+            message = "Role must be a string"
+            abort(400, message)
         if len(self.password) <= 6:
-            warning = "Password must be at least 6 characters"
-            abort(400, warning)
+            message = "Password must be at least 6 characters long"
+            abort(400, message)
         elif not any(char.isdigit() for char in self.password):
-            warning = "Password must have a digit"
-            abort(400, warning)
+            message = "Password must contain a digit"
+            abort(400, message)
+        elif not re.search("[#@$]", self.password):
+            message = "Password must have one of the special character [#@$]'"
+            abort(400, message)
+
+
+class LoginValidation:
+    def __init__(self, email, password):
+        self.email = email
+        self.password = password
+
+    def validate_login_data(self):
+        if self.email == "":
+            message = "Email address cannot be empty"
+            abort(400, message)
+        if self.password == "":
+            message = "Password cannot be empty"
+            abort(400, message)
+        if self.password and self.email == "":
+            message = "Email address and Password required!"
+            abort(400, message)
 
 
 class ProductValidation:
-    def __init__(self, data):
-        self.product_name = data['product_name']
-        self.category = data['category']
-        self.quantity = data['quantity']
-        self.unit_price = data['unit_price']
-        self.inventory = data['inventory']
+    def __init__(self, product_name, quantity, category, unit_price):
+        self.product_name = product_name
+        self.quantity = quantity
+        self.category = category
+        self.unit_price = unit_price
 
-    def validate_product_details(self):
-        for product in products:
+    def validate_product_data(self):
+        for product in Product.products:
             if product['product_name'] == self.product_name:
-                warning = "Sorry, product: '" + self.product_name + "' has been added already!"
-                abort(406, warning)
+                message = "Sorry, '" + self.product_name + "' already exists"
+                abort(400, message)
 
         if type(self.product_name) != str:
-            warning = "Sorry, product title must be a string"
-            abort(400, warning)
+            message = "product name must be a string"
+            abort(400, message)
+
+        if self.product_name == '':
+            message = "Product name cannot be empty"
+            abort(400, message)
+
+        if self.quantity < 0 or self.quantity == "":
+            message = "quantity must be a positive integer"
+            abort(400, message)
+
+        if self.unit_price < 0:
+            message = "price must be a positive float"
+            abort(400, message)
 
         if type(self.category) != str:
-            warning = "Sorry, product Category must be a string"
-            abort(400, warning)
-        if type(self.quantity) != int:
-            warning = "Sorry, product quantity price must be an integer "
-            abort(400, warning)
-        if self.quantity < 0:
-            warning = "Sorry, product quantity should be a positive value value"
-            abort(400, warning)
+            message = "Category must be a string"
+            abort(400, message)
 
-        if type(self.unit_price) != float:
-            warning = "Sorry, product unit price must be of the format 00.00"
-            abort(400, warning)
-        if self.unit_price < 0:
-            warning = "Sorry, unit price should be a positive value"
-            abort(400, warning)
+        if self.category == "":
+            message = "Category cannot be empty"
+            abort(400, message)
 
-        if type(self.inventory) != int:
-            warning = "An inventory record must be an integer"
-            abort(400, warning)
-        if self.inventory < 0:
-            warning = "Product price should be a positive value"
-            abort(400, warning)
-        if self.inventory < self.quantity:
-            warning = "Sorry, we've ran out of stock"
-            abort(400, warning)
