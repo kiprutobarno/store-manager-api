@@ -82,10 +82,6 @@ class TestingEndpoints(unittest.TestCase):
                                  content_type="application/json", follow_redirects=True)
         self.assertEqual(response.status_code, 404)
 
+    def teardown(self):
+        pass
 
-def teardown():
-    pass
-
-
-if __name__ == "__main__":
-    unittest.main()
